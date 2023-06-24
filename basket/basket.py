@@ -1,6 +1,3 @@
-
-
-
 class Basket():
     def __init__(self, request):
         self.session = request.session
@@ -26,4 +23,3 @@ class Basket():
         Get the basket data and count the qty of items
         """
         return sum(item['qty'] for item in self.basket.values())
-        
