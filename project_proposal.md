@@ -37,7 +37,7 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 
 - Session is temporary and interactive information
 - Single user per session - save retrieve arbitrary data on a per-site-visitor basis
-- Store the data on the server side 
+- Store the data on the server side
 - User recieves a session ID
 - Session ID is used to retrieve the associated data
 
@@ -45,10 +45,12 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 
 #### Sessions Set up
 
-- Setup 
+- Setup
 - Create session
 - context processor (site-wide access)
 - Add to session functionality
+
+### Part 2
 
 #### Sessions development - Delete Session data
 
@@ -66,3 +68,19 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 - Develop the front-end code to update the basket
 - Debug issues
 - Testing
+
+### Part 3 - Ecommerce store user, payment and other management
+
+- Refactoring - style/UI updates
+- User Management - Login, Logout
+- Payment
+- Order Management
+- Testing
+
+### Login Details
+
+```python
+email: a@a.com
+username: john
+password: johnjohn1
+```
