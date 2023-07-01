@@ -33,6 +33,8 @@ Error: ecommerce/basket/views.py", line 30, in basket_delete
 TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
 ```
 
+- Edit account detail does not work, shows 200 status code but does not change username
+
 #### Sessions
 
 - Session is temporary and interactive information
