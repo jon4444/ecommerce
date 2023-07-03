@@ -74,8 +74,8 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 ### Part 3 - Ecommerce store user, payment and other management
 
 - Refactoring - style/UI updates
-- User Management - Login, Logout
-- Payment
+- User Management - Signup, Login, Logout, Dashboard, Password Reset
+- Payment - Template, Payment, Capture
 - Order Management
 - Testing
 
