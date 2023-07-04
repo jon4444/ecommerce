@@ -1,10 +1,30 @@
-# Candidate Number: 260032
+# Candidate Number: 260032\
 
-## Project Notes
+## Cover sheet:
+
+## UNI LOGO
+
+## Degree Course and Department
+
+## Title of the Project
+
+## Name of Supervisor
+
+## Year of Submission
 
 ---
 
-### Abstract
+## Signed Statement of Originality
+
+---
+
+## Acknowledgment/Dedication Page
+
+---
+
+### Project Notes
+
+## Abstract
 
 - **Novel Nook** is an online platform that provides a comprehensive digital library for students, offering access to a vast collection of academic textbooks and learning resources.
 - It aims to revolutionize the way students access and engage with educational materials by providing an affordable, convenient, and environmentally friendly alternative to traditional print textbooks.
@@ -13,15 +33,44 @@
 - The resources emphasize user experience and functionality, providing students with intuitive features such as highlighting, note-taking, and search capabilities within the digital texts. These features enhance the learning experience, allowing students to personalize their study materials and easily find relevant information.
 - **Novel Nook** aims to disrupt the traditional textbook market by offering a modern, cost-effective, and eco-friendly solution for students. With its extensive library, user-friendly interface, and commitment to accessibility and sustainability, Perlego serves as a valuable resource for students seeking an efficient and affordable way to access educational materials.
 
-### Introduction
+---
 
-The
+## Table of Figures
+
+## Table of Contents
+
+## Introduction
+
+### Motivation
+
+The project covers a range of topics including:
+
+- Django URLS, models, views
+- Django templates
+- Unit Tests
+- Testing with PyTest
+- Working with Django and Docker
+- Deploying Django Applications
 
 ### Aims & Objectives
 
 The proposed project is an ecommerce web application for students to shop for learning resources.
 
-### Issues/Errors
+### Structure of the Report
+
+---
+
+## BODY
+
+### Background
+
+### Methodology
+
+### Data Analysis
+
+### Findings and Discussion
+
+### Limitations/Issues
 
 - Session ID is only generated only when user is in the basket page.
 - When the basket subtotal was added to the basket page, it did not show. Resolved by adding the quantity to the delete basket from the summary template, `document.getElementById("basket-qty").innerHTML = json.qty`
@@ -75,11 +124,11 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 
 - Refactoring - style/UI updates
 - User Management - Signup, Login, Logout, Dashboard, Password Reset
-- Payment - Template, Payment, Capture
+- Payment - Template, Payment, Capture Payment
 - Order Management
 - Testing
 
-### Login Details
+#### Login Details
 
 ```python
 email: a@a.com
