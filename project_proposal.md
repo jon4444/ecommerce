@@ -52,11 +52,20 @@ The project covers a range of topics including:
 - Working with Django and Docker
 - Deploying Django Applications
 
+E-Commerce's rapid expansion has revolutionised the way organisations function, opening up new opportunities for growth, efficiency, and customer involvement. As technology evolves, it is critical for organisations to embrace creative solutions in order to remain competitive in the digital market. In this context, the purpose of this dissertation is to investigate the construction of an eCommerce application utilising the Django framework, with a particular emphasis on using its extensive features and functionalities to establish a scalable and efficient online store.
+The fundamental motivation for this research is to address existing gaps and issues that eCommerce businesses encounter, such as sophisticated inventory management, secure payment processing, personalised user experiences, and smooth order fulfilment.
+
 ### Aims & Objectives
 
-The proposed project is an ecommerce web application for students to shop for learning resources.
+The objectives of this research encompass two key aspects. Firstly, we intend to design and develop a comprehensive eCommerce application utilizing Django, tailored specifically for an online bookstore catering to programming students. This application will encompass essential features such as an extensive product catalog, personalized user profiles, secure payment integration, shopping cart management, and streamlined order processing. By focusing on the unique needs and preferences of programming students, we aim to create an intuitive and engaging platform that fosters an optimal learning experience.
+
+Secondly, we plan to evaluate the performance and scalability of our developed application. Through rigorous testing, we will assess its ability to efficiently handle concurrent user requests, effectively manage a vast inventory of programming books, and ensure the integrity and security of sensitive customer data. By conducting in-depth performance analysis and benchmarking, we will gather valuable insights to optimize the application's performance, identify potential bottlenecks, and recommend best practices for similar eCommerce platforms targeting programming students.
+
+By achieving these objectives, this research endeavors to contribute to the existing body of knowledge by providing valuable insights into leveraging Django for developing specialized eCommerce platforms. The findings and recommendations derived from this study will serve as a valuable resource for online bookstores targeting programming students, empowering them to create immersive learning environments and meet the unique requirements of their target audience.
 
 ### Structure of the Report
+
+..add something...
 
 ---
 
@@ -82,7 +91,8 @@ Error: ecommerce/basket/views.py", line 30, in basket_delete
 TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
 ```
 
-- Edit account detail does not work, shows 200 status code but does not change username
+- Editing account details does not work, shows 200 status code but does not change username, deleting account does.
+- The default option does not include the shipping total.
 
 #### Sessions
 
@@ -122,11 +132,20 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 
 ### Part 3 - Ecommerce store user, payment and other management
 
+#### Stages
+
 - Refactoring - style/UI updates
 - User Management - Signup, Login, Logout, Dashboard, Password Reset
 - Payment - Template, Payment, Capture Payment
 - Order Management
 - Testing
+
+#### Orders
+
+- Saving Orders
+- Confirm payments
+- Finish the payment templates
+- Add orders to user's dashboard
 
 #### Login Details
 
