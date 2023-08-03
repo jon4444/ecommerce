@@ -1,7 +1,7 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
@@ -13,14 +13,15 @@ from .forms import RegistrationForm, UserEditForm
 from .models import UserBase
 from .token import account_activation_token
 
-# Create your views here.
 
 @login_required
 def dashboard(request):
     orders = user_orders(request)
-    return render(request, 'account/user/dashboard.html', {'orders': orders}) 
-                  
-    
+    return render(request,
+                  'account/dashboard/dashboard.html',
+                  {'section': 'profile', 'orders': orders})
+
+
 @login_required
 def edit_details(request):
     if request.method == 'POST':
@@ -32,8 +33,9 @@ def edit_details(request):
         user_form = UserEditForm(instance=request.user)
 
     return render(request,
-                  'account/user/edit_details.html', {'user_form': user_form})
-    
+                  'account/dashboard/edit_details.html', {'user_form': user_form})
+
+
 @login_required
 def delete_user(request):
     user = UserBase.objects.get(user_name=request.user)
@@ -42,19 +44,12 @@ def delete_user(request):
     logout(request)
     return redirect('account:delete_confirmation')
 
-# @login_required
-# def delete_user(request):
-#     user = request.user
-#     print(user)
-#     user.is_active = False
-#     user.save()
-#     logout(request)
-#     return redirect('account:delete_confirmation')
 
 def account_register(request):
+
     if request.user.is_authenticated:
         return redirect('account:dashboard')
-    
+
     if request.method == 'POST':
         registerForm = RegistrationForm(request.POST)
         if registerForm.is_valid():
@@ -72,17 +67,18 @@ def account_register(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject=subject, message=message)
-            return HttpResponse('Registered succesfully and activation sent')
+            return render(request, 'account/registration/register_email_confirm.html', {'form': registerForm})
     else:
         registerForm = RegistrationForm()
     return render(request, 'account/registration/register.html', {'form': registerForm})
+
 
 def account_activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = UserBase.objects.get(pk=uid)
-    except:
-        pass
+    except(TypeError, ValueError, OverflowError, user.DoesNotExist):
+        user = None
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
