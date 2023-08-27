@@ -157,6 +157,13 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 - Building the Database - MPTT, Internalization
 - Store table template integration
 
+### Part 6 - Managing multiple addresses
+
+- Review account models - customer and adress model created
+- Create address table - address table to be linked with customer table
+- Review/develop dashboard UI
+- Build the address CRUD system
+
 #### Login Details
 
 ```python
