@@ -2,6 +2,7 @@ from django.db import models
 from django.core.mail import send_mail
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
 from django.utils.translation import gettext_lazy as _
+
 # from django_countries.fields import CountryField
 
 # Create your models here.
@@ -44,6 +45,7 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
     about = models.TextField(_('about'), max_length=500, blank=True)
     
     # for delivery
+    
     # country = CountryField()
     phone_number = models.CharField(max_length=15, blank=True)
     postcode = models.CharField(max_length=12, blank=True)

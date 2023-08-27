@@ -8,14 +8,15 @@
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="h1 fw-bold">🎓 Unlock Knowledge</h1>
-        <p class="lead text-muted">With Novel Nook’s online library of books, academic texts and tools, trusted by students worldwide.</p>
+        <p class="lead text-muted">With Novel Nook’s online library of books, academic texts and tools, trusted by
+          students worldwide.</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Make an account</a>
         </p>
       </div>
     </div>
   </section>
-  
+
   <div class="alert alert-primary fw600 rounded-0 border-0 pb-3" role="alert">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-info-circle me-2"
       viewBox="0 0 16 16">
@@ -39,6 +40,14 @@
           {% for product in products %}
           <div class="col">
             <div class="card border-0">
+
+              {% for image in product.product_image.all %}
+              {% if image.is_feature %}
+              <img class="img-fluid" alt="Responsive Image" src="{{ image.image.url }}"
+                alt="{{ image.image.alt_text }}">
+              {% endif %}
+              {% endfor %}
+
               <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
               <div class="card-body px-0">
                 <p class="card-text">
@@ -56,7 +65,7 @@
     </div>
   </div>
 
- 
+
 
 </div>
 </div>

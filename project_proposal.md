@@ -147,6 +147,16 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 - Finish the payment templates
 - Add orders to user's dashboard
 
+### Part 5 - Multi-Product Types Database Integration
+
+- Black + isort
+- Requirements.txt
+- Django-debug-toolbar
+- Manage settings.py
+- Databse Schema
+- Building the Database - MPTT, Internalization
+- Store table template integration
+
 #### Login Details
 
 ```python
