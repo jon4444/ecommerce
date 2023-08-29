@@ -164,6 +164,16 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 - Review/develop dashboard UI
 - Build the address CRUD system
 
+
+### Part 7 - Managing multiple addresses
+
+- Customer - click on wishlist button,
+- URL - connected to the view
+- view; check if item already added to wishlist
+- 
+- 
+- 
+
 #### Login Details
 
 ```python
