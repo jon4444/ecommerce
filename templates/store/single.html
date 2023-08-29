@@ -1,4 +1,3 @@
-
 {% extends "../base.html" %}
 {% load static %}
 
@@ -12,6 +11,13 @@
 <main class="pt-2">
 
     <div class="container" style="max-width: 1000px">
+        {% if messages %}
+        <div class="alert alert-warning" alert-{{ message.tags }}" role="alert">
+            {% for message in messages %}
+            {{message|safe}} - <a href="{% url "account:wishlist" %}" class="alert-link">Your Wishlist</a>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div class="row g-3">
             <div class="alert alert-primary fw600 rounded-0 border-0 py-3" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
@@ -46,8 +52,10 @@
                     <hr>
                     <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to
                         basket</button>
-                    <button type="button" id="add-button" value="{{product.id}}" class="btn btn-light fw500">Add to
-                        Favorites</button>
+
+                    <a href="{% url "account:user_wishlist" product.id %}" class="btn btn-light fw500" tabindex="-1"
+                        role="button" aria-disabled="true">Add to Wish
+                        List</a>
                 </div>
             </div>
 
@@ -62,11 +70,13 @@
                                 <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
                                 <div class="bg-light">
                                     {% for image in product.product_image.all %}
-                                        {% if image.is_feature %}
-                                            <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.alt_text }}">
-                                        {% else %}
-                                            <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.alt_text }}">
-                                        {% endif %}
+                                    {% if image.is_feature %}
+                                    <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image"
+                                        src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+                                    {% else %}
+                                    <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image"
+                                        src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+                                    {% endif %}
                                     {% endfor %}
                                 </div>
                             </div>
