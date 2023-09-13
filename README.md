@@ -9,3 +9,5 @@ The objectives of this project encompass two key aspects. Firstly, I designed an
 - Clone this repository to your local machine.
 - Install the required dependencies using `pip install -r requirements.txt` from the virtual environment `env` 
 - `cd` back into the root directory and run the application `python manage.py runserver` or `py manage.py runserver`
+
+The application can be accessed from the branch `recovery-branch2` for now 😊
